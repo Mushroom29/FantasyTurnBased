@@ -1,5 +1,6 @@
 # Unity Temp Folder
 Temp/
+.vs/
 
 # Compiled Object files
 *.slo
