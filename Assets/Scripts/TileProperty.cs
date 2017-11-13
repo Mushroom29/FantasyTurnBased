@@ -2,27 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileProperty : MonoBehaviour
+[System.Serializable]
+public class TileProperty
 {
     public enum TileType { Grass, Hill };
     public enum ResourceType { None, Mineral, Sheep };
 
     public class ThingsOnTile
     {
+        public Vector3 vectorLocation;
         public TileType tileType;
         public ResourceType resourceType;
 
-        public ThingsOnTile(TileType tile, ResourceType res)
+        public ThingsOnTile(Vector3 loc, TileType tile, ResourceType res)
         {
+            vectorLocation = loc;
             tileType = tile;
             resourceType = res;
         }
 
-        public ThingsOnTile()
-        {
-            tileType = TileType.Grass;
-            resourceType = ResourceType.None;
-        }
+        //public ThingsOnTile()
+        //{
+        //    tileType = TileType.Grass;
+        //    resourceType = ResourceType.None;
+        //}
     }
-
 }

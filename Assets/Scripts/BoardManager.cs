@@ -5,9 +5,9 @@ using Random = UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour
 {
-    public int columns = 8;
-    public int rows = 8;
-    public int mirrorDirection = 0; // 0 for x-axis, 1 for y-axis
+    //public int columns = 8;
+    //public int rows = 8;
+    //public int mirrorDirection = 0; // 0 for x-axis, 1 for y-axis
     public GameObject[] grassTiles;
     public GameObject[] hillTiles;
 
@@ -15,7 +15,7 @@ public class BoardManager : MonoBehaviour
     private int boardColumns;
     private int boardRows;
 
-    private List<Vector3> gridPositions = new List<Vector3>();
+    //private List<Vector3> gridPositions = new List<Vector3>();
 
 
     //void InitializeBoardArray()
@@ -33,29 +33,50 @@ public class BoardManager : MonoBehaviour
     //}
 
 
-    void BoardSetup()
+    public void BoardSetup(List<List<TileProperty.ThingsOnTile>> boardArray)
     {
         boardHolder = new GameObject("Board").transform;
 
-        // first it does the left most column starting at the bottm
-        // then it goes from left to right
-        for (int x = 0; x < rows; x++)
+        foreach(List<TileProperty.ThingsOnTile> entryColumn in boardArray)
         {
-            for (int y = 0; y < columns; y++)
+            foreach (TileProperty.ThingsOnTile entry in entryColumn)
             {
                 GameObject toInstantiate = grassTiles[Random.Range(0, grassTiles.Length)];
 
-                // 50% chance of either tile type
-                if (Random.Range(-1, 1) >= 0)
+                if (entry.tileType == TileProperty.TileType.Hill)
                 {
                     toInstantiate = hillTiles[Random.Range(0, hillTiles.Length)];
                 }
+                //else if (entry.tileType == TileProperty.TileType.Grass)
+                //{
+                //    toInstantiate = grassTiles[Random.Range(0, grassTiles.Length)];
+                //}
 
-                GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+                GameObject instance = Instantiate(toInstantiate, entry.vectorLocation, Quaternion.identity) as GameObject;
 
                 instance.transform.SetParent(boardHolder);
             }
         }
+
+        //// first it does the left most column starting at the bottm
+        //// then it goes from left to right
+        //for (int x = 0; x < rows; x++)
+        //{
+        //    for (int y = 0; y < columns; y++)
+        //    {
+        //        GameObject toInstantiate = grassTiles[Random.Range(0, grassTiles.Length)];
+        //
+        //        // 50% chance of either tile type
+        //        if (Random.Range(-1, 1) >= 0)
+        //        {
+        //            toInstantiate = hillTiles[Random.Range(0, hillTiles.Length)];
+        //        }
+        //
+        //        GameObject instance = Instantiate(toInstantiate, new Vector3(x, y, 0f), Quaternion.identity) as GameObject;
+        //
+        //        instance.transform.SetParent(boardHolder);
+        //    }
+        //}
 
         //int children = boardHolder.childCount;
         //for (int i = 0; i < children; i++)
@@ -95,9 +116,9 @@ public class BoardManager : MonoBehaviour
         //}
     }
 
-    public void SetupScene()
-    {
-        BoardSetup();
-       // InitializeBoardArray();
-    }
+    //public void SetupScene()
+    //{
+    //    BoardSetup();
+    //   // InitializeBoardArray();
+    //}
 }

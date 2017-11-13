@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4672713645293790}
   - component: {fileID: 114562852296908050}
   - component: {fileID: 114737560794748652}
+  - component: {fileID: 114334934093328810}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114334934093328810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668865104987486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e7417f648b3f84ba7adb865f91ca34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  percentHill: 40
 --- !u!114 &114562852296908050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,9 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9ccd6305aaf50458ae0a5bc063c79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardArrayScript: {fileID: 0}
-  boardScript: {fileID: 0}
-  cameraScript: {fileID: 0}
+  columns: 6
+  rows: 7
 --- !u!114 &114737560794748652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -66,9 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3799c7ec96098429eec4555d9cb717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 4
-  rows: 4
-  mirrorDirection: 0
   grassTiles:
   - {fileID: 1520141141549742, guid: d2eaf1d1ef1e6fb408e80cdb2fd44fc3, type: 2}
   - {fileID: 1677574993832238, guid: 80a9a6a666bff6a49b8d1c67f2f51f1c, type: 2}

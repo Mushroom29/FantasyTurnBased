@@ -6,10 +6,14 @@ using UnityEngine.UI;                   //Allows us to use UI.
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    public List<List<TileProperty.ThingsOnTile>> boardArray = new List<List<TileProperty.ThingsOnTile>>();
+    public int columns = 8;
+    public int rows = 8;
+
     private BoardManager boardScript;
     private BoardArray arrayScript;
 
-    private bool doingSetup = true;
+    //private bool doingSetup = true;
 
     // Use this for initialization
     void Awake()
@@ -26,17 +30,15 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         boardScript = GetComponent<BoardManager>();
-        //print(boardScript);
-        arrayScript = GameObject.Find("BoardArray").GetComponent<BoardArray>();
-        //print(arrayScript);
+        arrayScript = GetComponent<BoardArray>();
         InitGame();
     }
 
     void InitGame()
     {
-        doingSetup = true;
+        //doingSetup = true;
 
-        boardScript.SetupScene();
-        arrayScript.SetupArray();
+        arrayScript.InitializeBoardArray(boardArray, columns, rows);
+        boardScript.BoardSetup(boardArray);
     }
 }
