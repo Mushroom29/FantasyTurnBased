@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Unit
+    uniqueID: 2047434153
+    locked: 0
+  - name: Building
+    uniqueID: 2617366967
+    locked: 0
+  - name: Resource
+    uniqueID: 1129400449
+    locked: 0
+  - name: FloorTile
+    uniqueID: 3008919375
+    locked: 0

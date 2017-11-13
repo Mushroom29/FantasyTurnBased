@@ -604,7 +604,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: a00c3bb0-bf75-41a1-a59e-dcbaec60f6b1
-  projectName: Fantasy Turn Based
+  projectName: FantasyTurnBased
   organizationId: kevinbjohnson9
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
