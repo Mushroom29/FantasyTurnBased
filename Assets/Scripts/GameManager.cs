@@ -5,10 +5,9 @@ using UnityEngine.UI;                   //Allows us to use UI.
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager instance = null;
-    public BoardManager boardScript;
-    public CameraManager cameraScript;
+    private BoardManager boardScript;
+    private BoardArray arrayScript;
 
     private bool doingSetup = true;
 
@@ -25,8 +24,11 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
         boardScript = GetComponent<BoardManager>();
-        cameraScript = GetComponent<CameraManager>();
+        //print(boardScript);
+        arrayScript = GameObject.Find("BoardArray").GetComponent<BoardArray>();
+        //print(arrayScript);
         InitGame();
     }
 
@@ -35,5 +37,6 @@ public class GameManager : MonoBehaviour
         doingSetup = true;
 
         boardScript.SetupScene();
+        arrayScript.SetupArray();
     }
 }

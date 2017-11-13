@@ -15,17 +15,18 @@ public class BoardManager : MonoBehaviour
     private int boardColumns;
     private int boardRows;
 
-    //private List<Vector3> gridPositions = new List<Vector3>();
+    private List<Vector3> gridPositions = new List<Vector3>();
 
-    // Create an empty array for gridPositions
-    //void InitializeList()
+
+    //void InitializeBoardArray()
     //{
     //    gridPositions.Clear();
     //
-    //    for (int x = 0; x < columns - 1; x++)
+    //    for (int x = 0; x < columns; x++)
     //    {
-    //        for (int y = 0; y < rows - 1; y++)
+    //        for (int y = 0; y < rows; y++)
     //        {
+    //
     //            gridPositions.Add(new Vector3(x, y, 0f));
     //        }
     //    }
@@ -97,6 +98,6 @@ public class BoardManager : MonoBehaviour
     public void SetupScene()
     {
         BoardSetup();
-    //    InitializeList();
+       // InitializeBoardArray();
     }
 }
