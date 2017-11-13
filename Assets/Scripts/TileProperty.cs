@@ -20,11 +20,5 @@ public class TileProperty
             tileType = tile;
             resourceType = res;
         }
-
-        //public ThingsOnTile()
-        //{
-        //    tileType = TileType.Grass;
-        //    resourceType = ResourceType.None;
-        //}
     }
 }
