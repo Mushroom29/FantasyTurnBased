@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public List<List<TileProperty.ThingsOnTile>> boardArray = new List<List<TileProperty.ThingsOnTile>>();
     public int columns = 8;
     public int rows = 8;
+    public int percentHill = 40;
 
     private BoardManager boardScript;
     private BoardArray arrayScript;
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         //doingSetup = true;
 
-        arrayScript.InitializeBoardArray(boardArray, columns, rows);
+        arrayScript.InitializeBoardArray(boardArray, columns, rows, true, false, percentHill);
         boardScript.BoardSetup(boardArray);
     }
 }

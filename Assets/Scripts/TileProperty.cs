@@ -20,5 +20,12 @@ public class TileProperty
             tileType = tile;
             resourceType = res;
         }
+
+        public ThingsOnTile()
+        {
+            vectorLocation = new Vector3(0, 0, 0f);
+            tileType = TileProperty.TileType.Grass;
+            resourceType = TileProperty.ResourceType.None;
+        }
     }
 }

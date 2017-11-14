@@ -53,7 +53,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e7417f648b3f84ba7adb865f91ca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentHill: 40
 --- !u!114 &114562852296908050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 6
   rows: 7
+  percentHill: 40
 --- !u!114 &114737560794748652
 MonoBehaviour:
   m_ObjectHideFlags: 1
