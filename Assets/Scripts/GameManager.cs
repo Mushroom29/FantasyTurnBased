@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public int columns = 8;
     public int rows = 8;
     public int percentHill = 40;
+    public bool xMirror = false;
+    public bool yMirror = true;
 
     private BoardManager boardScript;
     private BoardArray arrayScript;
+    private CameraManager cameraScript;
 
     //private bool doingSetup = true;
 
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
 
         boardScript = GetComponent<BoardManager>();
         arrayScript = GetComponent<BoardArray>();
+        cameraScript = GetComponent<CameraManager>();
         InitGame();
     }
 
@@ -39,7 +43,9 @@ public class GameManager : MonoBehaviour
     {
         //doingSetup = true;
 
-        arrayScript.InitializeBoardArray(boardArray, columns, rows, true, false, percentHill);
+        arrayScript.InitializeBoardArray(boardArray, columns, rows, xMirror, yMirror, percentHill);
         boardScript.BoardSetup(boardArray);
+        cameraScript.CameraSetup(boardArray);
+
     }
 }
