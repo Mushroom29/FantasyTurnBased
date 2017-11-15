@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour {
 
     private GameObject mainCamera;
-    private int TilePixelLength = 32;
+    //private int TilePixelLength = 32;
 
     public void CameraSetup(List<List<TileProperty.ThingsOnTile>> boardArray)
     {        
@@ -20,20 +20,43 @@ public class CameraManager : MonoBehaviour {
         float newXPosition = 0f;
         float newYPosition = 0f;
 
-        // 2 ways we need to determine the camera by whatever dimension is the limiting factor
-        // if the x resolution is limiting
+        print(boardWidth / boardHeight);
+        print(screenWidth / screenHeight);
 
-        // else the y resolution is limiting
-        newOrthographicSize = (boardHeight / (float)2);
-        newYPosition = (newOrthographicSize - (float)0.5);
-        newXPosition = ((boardWidth / (float)2) - (float)0.5);
+        // 2 ways we need to determine the camera by whatever dimension is the limiting factor
+        // Compare the aspect ratio of the game board to the game display to determine tile resolution
+        if((boardWidth / boardHeight) > (screenWidth / screenHeight))
+        {
+            // The board width is limited so it will determine tile resolution
+            //screenWidth / boardWidth
+
+            //   (screenWidth / screenHeight ) * boardHeight
+
+            //newOrthographicSize = ((screenWidth / screenHeight) * (boardWidth / (boardHeight * (float)2))); // 4.32
+            //newOrthographicSize = (((boardHeight / (float)2) * (boardWidth / (boardHeight))) / (screenWidth / screenHeight));
+            newOrthographicSize = ((boardWidth / (float) 2) * (screenHeight / screenWidth));
+            newYPosition = ((boardHeight / (float)2) - (float)0.5);
+            newXPosition = ((boardWidth / (float)2) - (float)0.5);
+
+            print("Width fill");
+        }
+        // 
+        else
+        {
+            // The board height is limited so it will determine tile resolution
+            newOrthographicSize = (boardHeight / (float)2);
+            newYPosition = (newOrthographicSize - (float)0.5);
+            newXPosition = ((boardWidth / (float)2) - (float)0.5);
+
+            print("Height fill");
+        }
 
         mainCamera.transform.position = new Vector3(newXPosition, newYPosition, -10f);
         mainCamera.GetComponent<Camera>().orthographicSize = newOrthographicSize;
 
-        print(boardWidth + " -> " + (Screen.width));
-        print(boardHeight + " -> " + (Screen.height / boardHeight));
-
+        print(boardWidth + " -> " + newOrthographicSize);
+        print(boardHeight + " -> " + (screenWidth / screenHeight));
+        
         print(screenWidth);
         print(screenHeight);
 
