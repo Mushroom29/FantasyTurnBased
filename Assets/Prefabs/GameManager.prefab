@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9ccd6305aaf50458ae0a5bc063c79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 8
-  rows: 8
+  columns: 5
+  rows: 5
   percentHill: 40
   xMirror: 1
   yMirror: 1
