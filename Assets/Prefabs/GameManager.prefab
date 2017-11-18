@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114737560794748652}
   - component: {fileID: 114334934093328810}
   - component: {fileID: 114026238348274714}
+  - component: {fileID: 114756239234570302}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -76,11 +77,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9ccd6305aaf50458ae0a5bc063c79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 5
-  rows: 5
+  columns: 4
+  rows: 8
   percentHill: 40
-  xMirror: 1
+  xMirror: 0
   yMirror: 1
+  startingHumansMin: 1
+  startingHumansMax: 3
+  startingOrcsMin: 1
+  startingOrcsMax: 2
 --- !u!114 &114737560794748652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,3 +105,17 @@ MonoBehaviour:
   - {fileID: 1071185567527932, guid: 412a9132e201a0a4d925b5d34ad11b32, type: 2}
   - {fileID: 1118210729441228, guid: 3f09d5d28c9f5a8498c364b427fec1fd, type: 2}
   - {fileID: 1239884106182424, guid: 12aef54df825887429723caabe56b859, type: 2}
+--- !u!114 &114756239234570302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668865104987486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02308ad2efb2d74c9f9fae937844f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  humanObject: {fileID: 1061951317496176, guid: 48a3ec07a3c077d44bb4a4851283c2ea,
+    type: 2}
+  orcObject: {fileID: 1033668055877704, guid: e000a1764393ada4abeb218a22337c03, type: 2}
