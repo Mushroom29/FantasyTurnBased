@@ -9,8 +9,6 @@ public class BoardManager : MonoBehaviour
     public GameObject[] hillTiles;
 
     private Transform boardHolder;
-    private int boardColumns;
-    private int boardRows;
 
     public void BoardSetup(List<List<TileProperty.ThingsOnTile>> boardArray)
     {

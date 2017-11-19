@@ -12,9 +12,14 @@ public class GameManager : MonoBehaviour
     public int percentHill = 40;
     public bool xMirror = false;
     public bool yMirror = true;
+    public int startingHumansMin = 1;
+    public int startingHumansMax = 3;
+    public int startingOrcsMin = 1;
+    public int startingOrcsMax = 2;
 
-    private BoardManager boardScript;
     private BoardArray arrayScript;
+    private BoardManager boardScript;
+    private UnitManager unitScript;
     private CameraManager cameraScript;
 
     //private bool doingSetup = true;
@@ -33,8 +38,9 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        boardScript = GetComponent<BoardManager>();
         arrayScript = GetComponent<BoardArray>();
+        boardScript = GetComponent<BoardManager>();
+        unitScript = GetComponent<UnitManager>();
         cameraScript = GetComponent<CameraManager>();
         InitGame();
     }
@@ -43,8 +49,9 @@ public class GameManager : MonoBehaviour
     {
         //doingSetup = true;
 
-        arrayScript.InitializeBoardArray(boardArray, columns, rows, xMirror, yMirror, percentHill);
+        arrayScript.InitializeBoardArray(boardArray, columns, rows, xMirror, yMirror, percentHill, startingHumansMin, startingHumansMax, startingOrcsMin, startingOrcsMax);
         boardScript.BoardSetup(boardArray);
+        unitScript.UnitSetup(boardArray);
         cameraScript.CameraSetup(boardArray);
 
     }
