@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114334934093328810}
   - component: {fileID: 114026238348274714}
   - component: {fileID: 114756239234570302}
+  - component: {fileID: 114782318098242232}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -119,3 +120,14 @@ MonoBehaviour:
   humanObject: {fileID: 1061951317496176, guid: 48a3ec07a3c077d44bb4a4851283c2ea,
     type: 2}
   orcObject: {fileID: 1033668055877704, guid: e000a1764393ada4abeb218a22337c03, type: 2}
+--- !u!114 &114782318098242232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1668865104987486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68eb90f1a25a53547a23bb08674b473f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

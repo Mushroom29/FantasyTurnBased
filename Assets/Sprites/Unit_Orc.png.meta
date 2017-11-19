@@ -1,13 +1,17 @@
 fileFormatVersion: 2
-guid: c6a7574bd4470fe46a4ebab0302ec022
-timeCreated: 1510880456
+guid: e6b9ff8e199df494c857244dec1340d2
+timeCreated: 1511072497
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Human_0
-    21300002: Human_1
-    21300004: Human_2
-    21300006: Human_3
+    21300000: Orc1_0
+    21300002: Orc1_1
+    21300004: Orc1_2
+    21300006: Orc1_3
+    21300008: Unit_Orc_0
+    21300010: Unit_Orc_1
+    21300012: Unit_Orc_2
+    21300014: Unit_Orc_3
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -82,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Human_0
+      name: Unit_Orc_0
       rect:
         serializedVersion: 2
         x: 0
@@ -96,7 +100,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Human_1
+      name: Unit_Orc_1
       rect:
         serializedVersion: 2
         x: 32
@@ -110,7 +114,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Human_2
+      name: Unit_Orc_2
       rect:
         serializedVersion: 2
         x: 64
@@ -124,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Human_3
+      name: Unit_Orc_3
       rect:
         serializedVersion: 2
         x: 96
